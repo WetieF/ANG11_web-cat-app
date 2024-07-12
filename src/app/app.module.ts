@@ -14,6 +14,7 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
 import { ProductsNavBarComponent } from './components/products/products-nav-bar/products-nav-bar.component';
 import { ProductListComponent } from './components/products/product-list/product-list.component';
 import { ProductItemComponent } from './components/products/product-list/product-item/product-item.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProductItemComponent } from './components/products/product-list/product
     EditProductComponent,
     ProductsNavBarComponent,
     ProductListComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
