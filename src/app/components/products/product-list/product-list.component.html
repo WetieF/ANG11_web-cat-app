@@ -1,0 +1,94 @@
+<div class="container">
+
+    <!-- result perment de retourner AppDataState qui a trois element(dataState, data, errorMessage) -->
+    <ng-container *ngIf="(productsInput$ | async) as result" [ngSwitch]="result.dataState"> 
+        
+      <ng-container *ngSwitchCase="DataStateEnum.LOADING">
+          loading .....
+      </ng-container>
+  
+      <ng-container *ngSwitchCase="DataStateEnum.ERROR">
+          <div class="alert-danger">{{result.errorMessage}}</div>
+      </ng-container>
+  
+      <ng-container *ngSwitchCase="DataStateEnum.LOADED">
+        <div class="container mt-3" *ngIf="productsInput$">         
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Selected</th>
+                  <th>Available</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <app-product-item 
+                    [product]="p" 
+                    (eventEmitter)="onActionEvent($event)" 
+                    *ngFor="let p of result.data" style="display: contents;">
+                </app-product-item>
+
+
+                <!-- <tr *ngFor="let p of result.data">
+                  <td>{{p.id}}</td>
+                  <td>{{p.name}}</td>
+                  <td>{{p.price}}</td>
+                  <td>{{p.quantity}}</td>
+                  <td>{{p.selected}}</td>
+                  <td>{{p.available}}</td>
+                  <td>
+                    <button (click)="onSelect(p)" [ngClass]="p.selected? 'btn-success' : 'btn-danger'" class="btn btn-sm">
+                      <span *ngIf="p.selected">Unselect</span>
+                      <span *ngIf="!p.selected">Select</span>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger" (click)="onDelete(p)">
+                      <span class="fa fa-trash-o"></span>
+                    </button>
+                  </td>
+                  <td>
+                    <button (click)="onEditProduct(p)">
+                      <span class="fa fa-edit" style="font-size:30px;color:green"></span>
+                    </button>
+                  </td>
+                </tr> -->            
+              </tbody>
+            </table>
+        </div>
+      </ng-container>
+    </ng-container>
+  
+</div>
+  
+  <!---->
+  
+  <!-- <div class="container mt-3" *ngIf="products$">         
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Selected</th>
+            <th>Available</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of products$ | async">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.quantity}}</td>
+            <td>{{p.selected}}</td>
+            <td>{{p.available}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+   -->

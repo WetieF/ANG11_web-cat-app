@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Honda",
+      "price": "2000",
+      "quantity": 150,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": "2",
+      "name": "Toshiba",
+      "price": 2500,
+      "quantity": 450,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": "3",
+      "name": "Acer",
+      "price": 3500,
+      "quantity": 330,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": "4",
+      "name": "Apple",
+      "price": 4000,
+      "quantity": 100,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": "5",
+      "name": "Audi",
+      "price": "1423",
+      "quantity": "111",
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": "6",
+      "name": "Mazda",
+      "price": "8700",
+      "quantity": "202",
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": "7",
+      "name": "Mercedes",
+      "price": "6200",
+      "quantity": "216",
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": "8",
+      "name": "Huydai",
+      "price": "2312",
+      "quantity": "254",
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": "9",
+      "name": "Wetie",
+      "price": "9000",
+      "quantity": "128",
+      "selected": true,
+      "available": true
+    }
+  ]
+}
